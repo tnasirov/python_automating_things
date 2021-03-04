@@ -4,7 +4,8 @@ import os        # For getting file size and cheking if file exists
 import sys       # For CLI args
 
 
-# log-clean.py log.txt 10 5
+# USAGE:  ScriptName   LogName    maxKilobytes howManyFiles
+#        log-clean.py   log.txt       10           5
 
 if(len(sys.argv) < 4):
     print("Missing argumen! Usage is: Script name, Log name, log size and log file count")
@@ -30,7 +31,7 @@ if(logfile_size >= limitsize):                    # Check if actual logfile size
         shutil.copyfile(file_name, file_name + "_1")  # rename our main file to file_1
         print(f'Copied {file_name} to {file_name}_1')
     
-    myfile = open(file_name, 'w')                     # after all the files renamed, we open our main filan in write mode
+    myfile = open(file_name, 'w')                     # after all the files renamed, we open our main file in write mode
     myfile.close()                                    # and it erases the file.
                 
             
