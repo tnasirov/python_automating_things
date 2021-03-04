@@ -1,0 +1,42 @@
+[RUN_DATE]
+2014-09-18
+[RUN_DATE_EOF]
+[DESCRIPTION]
+/var/log/wtmp Permissions LINUX-MULTI
+[DESCRIPTION_EOF]
+[FIXLET_DESCRIPTION]
+This fixlet verifies the access permissions of /var/log/wtmp. The default permissions do not allow write access for world.<br /> The access permissions of the /var/log/wtmp file will be compared with the value you specify as the desired value for the 'OSR Permissions for /var/log/wtmp' parameter. <br /><br />If the setting allows group write access, this fixlet will be relevant if the file has group write access and the group does not meet one of the following conditions:<ul><li>The associated group is used only by set-GID operating system programs to avoid a need for root only access privileges.<em> Note: The fixlet does not check this condition.</em></li><li>The associated group has GID&lt;= 99</li><li>The client system is Red Hat version 6 and the associated group has GID&lt;= 99 or &gt;=101 and &lt;=199</li></ul>
+[FIXLET_DESCRIPTION_EOF]
+[CONTROL_COVERAGE]
+GTS_LINUX-MULTI-105
+[CONTROL_COVERAGE_EOF]
+[STATUS]
+FAIL
+[STATUS_EOF]
+[PARAMETERS]
+FILE_USR_REQ_PERM="?[r-][w-][x-][r-]-?[r-]-?";FILE_USR_REQ_PERM="?[r-][w-][x-][r-]-?[r-]-?";params_file=params
+[PARAMETERS_EOF]
+[TIMETAKEN]
+0
+[TIMETAKEN_EOF]
+[REASON]
+Access permissions are not acceptable for /var/log/wtmp ==> fail.
+[REASON_EOF]
+[MEASURED_VALUE]
+-rwxr-xrwx;rpm;rpm;/bin/rpm
+crw-rw----;root;tty;/dev/tty20
+crw-rw----;root;tty;/dev/tty21
+crw-rw----;root;lp;/dev/lp0
+drwxrwsr-x;bin;bin;/etc/adsm
+-rw-rw-r--;root;root;/etc/group
+-rw-rw-r--;oraad5;root;/etc/oratab
+-rw-rw-r--;root;root;/etc/passwd
+drwxr-xrwx;ad5adm;sapsys;/sapmnt/AD5
+drwxrwxr-x;ad5adm;sapsys;/sapmnt/AD5/exe
+drwxrwxr-x;ad5adm;oracle;/oracle/client
+-rw-rw-r--;root;tty;/var/log/wtmp
+lrwxrwxrwx;rpm;rpm;/usr/bin/rpmdb
+drwxrwxrwx;root;root;/tmp
+[MEASURED_VALUE_EOF]
+[ANALYSIS_RESULT]
+[ANALYSIS_RESULT_EOF]

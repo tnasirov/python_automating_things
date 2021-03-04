@@ -1,0 +1,29 @@
+﻿Task details
+
+1. Write a bash script
+ - Source data: test.txt
+
+The script must generate output with user and group names from section titled "[MEASURED_VALUE]" to stdout in the following format:
+
+username;group
+username1;group1
+...
+Requirements:
+1. Each user/group name pair must be on its own line
+2. Each pair must be unique
+3. The resulting list must be in ascending order
+4. No external libraries are allowed
+5. Add the next parameters to the script
+  -t type
+  If -t is present, the script must only process files with the type of 'type'
+  Where type can be one of:
+    d - directory
+    f - a file (regular file)
+
+Sample:
+./script.sh -t f   - Outputs unique sorted name pairs "username;group" only for regular file.
+./script.sh -t d   - Outputs unique sorted name pairs "username;group" only for directories.
+
+Please send the script and the screenshots of its execution
+
+Thanks
